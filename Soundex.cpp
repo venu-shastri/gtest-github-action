@@ -1,6 +1,5 @@
 #include "Soundex.h"
-#include <ctype.h>
-#include <string.h>
+#include <cctype>
 
 char getSoundexCode(char c) {
     c = toupper(c);
@@ -15,21 +14,23 @@ char getSoundexCode(char c) {
     }
 }
 
-void generateSoundex(const char *name, char *soundex) {
-    int len = strlen(name);
-    soundex[0] = toupper(name[0]);
-    int sIndex = 1;
+std::string generateSoundex(const std::string& name) {
+    if (name.empty()) return "";
 
-    for (int i = 1; i < len && sIndex < 4; i++) {
+    std::string soundex(1, toupper(name[0]));
+    char prevCode = getSoundexCode(name[0]);
+
+    for (size_t i = 1; i < name.length() && soundex.length() < 4; ++i) {
         char code = getSoundexCode(name[i]);
-        if (code != '0' && code != soundex[sIndex - 1]) {
-            soundex[sIndex++] = code;
+        if (code != '0' && code != prevCode) {
+            soundex += code;
+            prevCode = code;
         }
     }
 
-    while (sIndex < 4) {
-        soundex[sIndex++] = '0';
+    while (soundex.length() < 4) {
+        soundex += '0';
     }
 
-    soundex[4] = '\0';
+    return soundex;
 }
