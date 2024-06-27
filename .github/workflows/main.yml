@@ -27,15 +27,16 @@ jobs:
         sudo apt-get install -y gcovr
         
         
-    - name: Install lizard
-      run: pip install lizard
-
-    - name: Limit complexity
-      run: $HOME/.local/bin/lizard --CCN 3
+    - name: Lizard Runner
+      uses: Uno-Takashi/Lizard-Runner@v3
+      with:
+          path: "./"
+          CCN: "3"
+          exclude: "./build/*"
           
 
     - name: Configure CMake
-      run: cmake -Bbuild -H.
+      run: cmake -B build -H.
 
     - name: Build
       run: cmake --build build --config Release
