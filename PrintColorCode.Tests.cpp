@@ -5,7 +5,7 @@ TEST(PrintColorCodeTestSuite, AssertColorCodeManualItemsCount){
 //Arrange
   int expectedCount=25;
  //Act
-  int actualCount=printColorCode();
+  int actualCount=printColorMap();
   //Assert
   ASSERT_EQ(expectedCount,actualCount);
   
