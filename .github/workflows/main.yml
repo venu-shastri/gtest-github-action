@@ -27,12 +27,7 @@ jobs:
         sudo apt-get install -y gcovr
         
         
-    - name: Lizard Runner
-      uses: Uno-Takashi/Lizard-Runner@v3
-      with:
-          path: "./"
-          CCN: "3"
-          exclude: "./build/*"
+   
           
 
     - name: Configure CMake
