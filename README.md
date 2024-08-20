@@ -1,5 +1,5 @@
 # code-test-cover
-# The Soundex Algorithm
+# The Soundex Algorithm 
 
 Searching is a common need in many applications. An effective search should find matches even if the user misspells words.
 In this Repo, we will test-drive a Soundex  algorithm that can improve the search capability in an application. The long-standing Soundex algorithm encodes words into a letter plus three digits, mapping similarly sounding words to the
