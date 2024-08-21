@@ -35,7 +35,7 @@ TEST(TestChallengeTestSuite, InteractionTesting){
   
   //Assert
   EXPECT_EQ(expectedFailureCount, getCount());//state Based 
-  EXPECT_EQ(celciusArg, expectedCelciusToBeReceivedByDependency);//state Based 
+  EXPECT_FLOAT_EQ(celciusArg, expectedCelciusToBeReceivedByDependency);//state Based 
   EXPECT_EQ(callCount,1);
   
   
