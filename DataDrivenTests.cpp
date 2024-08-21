@@ -42,7 +42,6 @@ TEST_F(string_calculator_add_Fixture,when_passed_a_single_number_returns_0_for_z
 
 TEST_P(string_calculator_add_Parameter_Fixture,when_passed_a_single_Or_Multiple_Number_with_Delimiters_returns_Sum){
  //Arrange
-  StringCalculator calculator;
   string input=std::get<0>(GetParam());
   int expectedsum=std::get<1>(GetParam());
   //Act
