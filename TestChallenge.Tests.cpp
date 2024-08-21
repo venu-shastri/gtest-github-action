@@ -27,7 +27,7 @@ TEST(TestChallengeTestSuite, StateTesting){
 TEST(TestChallengeTestSuite, InteractionTesting){
 //Arrange
   int expectedFailureCount=1;
-  float inputTempInF = 100;
+  float inputTempInF = 100.00004;
  setCount(0);
   float expectedCelciusToBeReceivedByDependency=37.7778;
  //Act
