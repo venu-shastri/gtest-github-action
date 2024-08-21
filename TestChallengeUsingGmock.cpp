@@ -8,6 +8,7 @@ public:
  int alert(float celcius){ return 200;}
  int  getFailureCount(){ return failureCount;}
  void incrementFailureCount(int seed) { failureCount+=seed;}
+
   void resetFailureCount(){ failureCount=0;}
 
 };
@@ -18,5 +19,6 @@ void alertInCelcius(float farenheit,INetworkAlerter* networkAlerter){
     int returnCode = networkAlerter->alert(celcius);
     if (returnCode != 200) {
          incrementFailureCount(1);
+     
     }
 }
