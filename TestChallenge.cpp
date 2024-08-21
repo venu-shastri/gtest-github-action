@@ -1,7 +1,7 @@
 #include <iostream>
+#include "TestChallenge.h"
 
 
-int alertFailureCount = 0;
 
 int realTimeNetworkAlerter(float celcius) {
    //Real Network Interaction Happens Here
