@@ -31,4 +31,13 @@ TEST(PrintColorCodeTestSuite, AssertColorCodeManualItemsCountUsingStub){
   ASSERT_EQ(expectedCount,actualCount);
   
 }
+TEST(PrintColorCodeTestSuite, AssertColorCodeManualItemsCountUsingLamda){
+//Arrange
+  int expectedCount=25;
 
+ //Act
+  int actualCount=printColorMap([](int colorcode,const char* majorColor,const char* minorColor) { });
+  //Assert
+  ASSERT_EQ(expectedCount,actualCount);
+  
+}
