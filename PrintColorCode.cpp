@@ -25,7 +25,7 @@ int printColorMap(IPrinter* printer){
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            printer(i * 5 + j , majorColor[i], minorColor[i] );
+            printer->print(i * 5 + j , majorColor[i], minorColor[i] );
             //std::cout << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
         }
     }
