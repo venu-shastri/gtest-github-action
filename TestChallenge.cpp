@@ -17,7 +17,7 @@ int realTimeNetworkAlerter(float celcius) {
     float celcius = (farenheit - 32) * 5 / 9;
     int returnCode = networkAlerter(celcius);
     if (returnCode != 200) {
-      alertFailureCount += 0;
+      alertFailureCount += 1;
     }
 }
 
