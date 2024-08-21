@@ -17,6 +17,7 @@ TEST(TestChallengeTestSuite, StateTesting){
 //Arrange
   int expectedFailureCount=1;
   float inputTemp = 100;
+    alertFailureCount=0;
  //Act
   alertInCelcius(inputTemp,&networkAltererStub);
   //Assert
@@ -27,6 +28,7 @@ TEST(TestChallengeTestSuite, InteractionTesting){
 //Arrange
   int expectedFailureCount=1;
   float inputTempInF = 100;
+  alertFailureCount=0;
   float expectedCelciusToBeReceivedByDependency=37.7778;
  //Act
   alertInCelcius(inputTempInF,&networkAltererMock);
