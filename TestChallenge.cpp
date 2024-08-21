@@ -13,7 +13,7 @@ int realTimeNetworkAlerter(float celcius) {
   return 500;
 }
 
- void alertInCelcius(float farenheit,int(*networkAlerter)(float celcius)); {
+ void alertInCelcius(float farenheit,int(*networkAlerter)(float celcius)) {
     float celcius = (farenheit - 32) * 5 / 9;
     int returnCode = networkAlerter(celcius);
     if (returnCode != 200) {
