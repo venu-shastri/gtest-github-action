@@ -19,7 +19,7 @@ INSTANTIATE_TEST_SUITE_P(SingleNumerParameter,
 TEST(string_calculator_add_when_passed_a_single_number,returns_0_for_empty_string){
  //Arrange
   StringCalculator calculator;
-  string input=""";
+  string input="";
   int expectedsum=0;
   //Act
   int actualSum=calculator.Add(input);
