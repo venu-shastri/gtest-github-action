@@ -17,7 +17,7 @@ TEST(TestChallengeTestSuite, StateTesting){
 //Arrange
   int expectedFailureCount=1;
   float inputTemp = 100;
-    alertFailureCount=0;
+   // alertFailureCount=0;
  //Act
   alertInCelcius(inputTemp,&networkAltererStub);
   //Assert
