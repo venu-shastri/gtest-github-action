@@ -1,4 +1,5 @@
 #include "PrintColorCode.h"
+#include <string>
 #include <gtest/gtest.h>
 
 //TestDouble, FakeDependnecy, Stub , Dumb
@@ -6,6 +7,14 @@ void FakePrinter(int colorCode, const char* majorColor,const char* minorColor){
 
 }
 
+//hand made mock
+vector<string> coloCodeManual;
+void FakePrinterMock(int colorCode, const char* majorColor,const char* minorColor){
+      std::string majorColorString(majorColor);
+      std::string minorColorString(minorColor);
+      std:string manualItem=colorCode + "|"+majorColorString+"|"+minorColorString;
+      coloCodeManual.push_back(manualItem);
+}
 class FakePrinterTestDouble:public IPrinter{
 
 public:
@@ -41,3 +50,17 @@ TEST(PrintColorCodeTestSuite, AssertColorCodeManualItemsCountUsingLamda){
   ASSERT_EQ(expectedCount,actualCount);
   
 }
+TEST(PrintColorCodeTestSuite, InteractionTestig){
+//Arrange
+  std::string expectedManulaContent="2|White|Orange";
+
+ //Act
+  printColorMap(&FakePrinterMock);
+  //Assert
+     std:string recoredContent= coloCodeManual[1];
+  ASSERT_EQ(recoredContent,expectedManulaContent);
+  
+}
+
+
+
