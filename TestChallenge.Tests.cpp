@@ -29,7 +29,7 @@ TEST(TestChallengeTestSuite, InteractionTesting){
   float inputTempInF = 100;
   float expectedCelciusToBeReceivedByDependency=37.7778;
  //Act
-  alertInCelcius(inputTemp,&networkAltererMock);
+  alertInCelcius(inputTempInF,&networkAltererMock);
   
   //Assert
   ASSERT_EQ(expectedFailureCount, alertFailureCount);//state Based 
