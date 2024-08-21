@@ -7,8 +7,8 @@ public:
 
  int alert(float celcius){ return 200;}
  int  getFailureCount(){ return failureCount;}
- void icrementFailureCount(int seed) { failureCount+=seed;}
-  vod resetFailureCount(){ failureCount=0;}
+ void incrementFailureCount(int seed) { failureCount+=seed;}
+  void resetFailureCount(){ failureCount=0;}
 
 };
 
