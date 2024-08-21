@@ -1,6 +1,7 @@
 #include "PrintColorCode.h"
 #include <gtest/gtest.h>
-//TestDouble, FakeDependnecy
+
+//TestDouble, FakeDependnecy, Stub , Dumb
 void FakePrinter(int colorCode, const char* majorColor,const char* minorColor){
   
 }
