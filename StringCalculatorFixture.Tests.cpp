@@ -7,9 +7,27 @@ class StringCalculatorAddTestFixture:public testing::Test{
     //Common Reusable Code
     StringCalculator calculator;
     //Hook Callbacks
+  // You can define per-test-suite set-up logic as usual.
+     static void SetUpTestSuite() {
+       std::cout<<"StringCalculatorAddTestFixture Setup"<std::endl;
+     }
+ // You can define per-test-suite tear-down logic as usual.
+     static void TearDownTestSuite() {
+       std::cout<<"StringCalculatorAddTestFixture TearDown"<std::endl;
+     }
+  // You can define per-test set-up logic as usual.
+  void SetUp() override {
+    std::cout<<"Test Setup"<std::endl;
+  }
+
+  // You can define per-test tear-down logic as usual.
+  void TearDown() override {
+    std::cout<<"Test Teardown"<std::endl;
+  }
+
 };
 
-TEST_F(StringCalculatorAddTestFixture,_when_passed_a_single_number_returns_0_for_empty_string){
+TEST_F(StringCalculatorAddTestFixture,when_passed_a_single_number_returns_0_for_empty_string){
  //Arrange
   string input="";
   int expectedsum=0;
