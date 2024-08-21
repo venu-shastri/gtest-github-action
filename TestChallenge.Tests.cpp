@@ -34,9 +34,9 @@ TEST(TestChallengeTestSuite, InteractionTesting){
   alertInCelcius(inputTempInF,&networkAltererMock);
   
   //Assert
-  ASSERT_EQ(expectedFailureCount, getCount());//state Based 
-  ASSERT_EQ(celciusArg, expectedCelciusToBeReceivedByDependency);//state Based 
-  ASSERT_EQ(callCount,1);
+  EXPECT_EQ(expectedFailureCount, getCount());//state Based 
+  EXPECT_EQ(celciusArg, expectedCelciusToBeReceivedByDependency);//state Based 
+  EXPECT_EQ(callCount,1);
   
   
 }
