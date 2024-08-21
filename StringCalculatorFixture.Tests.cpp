@@ -9,20 +9,20 @@ class StringCalculatorAddTestFixture:public testing::Test{
     //Hook Callbacks
   // You can define per-test-suite set-up logic as usual.
      static void SetUpTestSuite() {
-       std::cout<<"StringCalculatorAddTestFixture Setup"<std::endl;
+       std::cout<<"StringCalculatorAddTestFixture Setup"<<std::endl;
      }
  // You can define per-test-suite tear-down logic as usual.
      static void TearDownTestSuite() {
-       std::cout<<"StringCalculatorAddTestFixture TearDown"<std::endl;
+       std::cout<<"StringCalculatorAddTestFixture TearDown"<<std::endl;
      }
   // You can define per-test set-up logic as usual.
   void SetUp() override {
-    std::cout<<"Test Setup"<std::endl;
+    std::cout<<"Test Setup"<<std::endl;
   }
 
   // You can define per-test tear-down logic as usual.
   void TearDown() override {
-    std::cout<<"Test Teardown"<std::endl;
+    std::cout<<"Test Teardown"<<std::endl;
   }
 
 };
