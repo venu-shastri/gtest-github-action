@@ -7,14 +7,17 @@ class string_calculator_add_Fixture:public testing::Test{
 };
 class string_calculator_add_Parameter_Fixture:
                                  public string_calculator_add_Fixture, 
-                                 public testing::WithParamInterface<std::string>{
+                                 public testing::WithParamInterface<std::tuple<std::string,int>>{
   protected:
   StringCalculator calculator;
 
 };
 INSTANTIATE_TEST_SUITE_P(SingleNumerParameter,
                          string_calculator_add_Parameter_Fixture,
-                         testing::Values("1"));
+                         testing::Values(
+                                        {"1",1},
+                                        {"1,2",3}
+  ));
 
 TEST(string_calculator_add_when_passed_a_single_number,returns_0_for_empty_string){
  //Arrange
@@ -37,24 +40,14 @@ TEST_F(string_calculator_add_Fixture,when_passed_a_single_number_returns_0_for_z
   ASSERT_EQ(actualSum,expectedsum);
 }
 
-TEST_P(string_calculator_add_Parameter_Fixture,when_passed_a_single_number_returns_1_for_one){
+TEST_P(string_calculator_add_Parameter_Fixture,when_passed_a_single_Or_Multiple_Number_with_Delimiters_returns_Sum){
  //Arrange
   StringCalculator calculator;
-  string input=GetParam();
-  int expectedsum=1;
+  string input=std::get<0>(GetParam());
+  int expectedsum=std::get<1>(GetParam());
   //Act
   int actualSum=calculator.Add(input);
   //Assert
   ASSERT_EQ(actualSum,expectedsum);
 }
 
-TEST(string_calculator_add_when_passed_two_comma_delimited_numbers,returns_their_sum){
- //Arrange
-  StringCalculator calculator;
-  string input="1,2";
-  int expectedsum=3;
-  //Act
-  int actualSum=calculator.Add(input);
-  //Assert
-  ASSERT_EQ(actualSum,expectedsum);
-}
