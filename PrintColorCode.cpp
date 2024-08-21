@@ -31,3 +31,17 @@ int printColorMap(IPrinter* printer){
     }
     return i * j;
 }
+
+//C++
+int printColorMap(std::function<void(int,const char*,const char*)> printer){
+    const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
+    const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+    int i = 0, j = 0;
+    for(i = 0; i < 5; i++) {
+        for(j = 0; j < 5; j++) {
+            printer(i * 5 + j , majorColor[i], minorColor[i] );
+            //std::cout << i * 5 + j << " | " << majorColor[i] << " | " << minorColor[i] << "\n";
+        }
+    }
+    return i * j;
+}
