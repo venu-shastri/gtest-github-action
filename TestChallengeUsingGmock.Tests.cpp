@@ -17,7 +17,11 @@ MOCK_METHOD(void, resetFailureCount,());
 TEST(AlertCelciusTestSuite,InteractionTesting){
     NetworkAlerterMock mockObj;
     //Expectation 
-      EXPECT_CALL(mockObj,alert(FloatEq(37.7778)).Times(1).WillRepeatedly(Return(500));
+      EXPECT_CALL(
+          mockObj,
+          alert(FloatEq(37.7778))).
+          Times(1).
+          WillRepeatedly(Return(500));
     //Interaction
     alertInCelcius(100.00004,&mockObj);
   
