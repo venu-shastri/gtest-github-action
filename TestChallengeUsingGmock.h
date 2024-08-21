@@ -1,7 +1,7 @@
 //interface
 class INetworkAlerter{
 public:
-vitual ~INetworkAlerter(){}
+virtual ~INetworkAlerter(){}
 virtual int alert(float celcius)=0;
 virtual int  getFailureCount()=0;
 virtual void incrementFailureCount(int seed)=0;
