@@ -14,10 +14,10 @@ class string_calculator_add_Parameter_Fixture:
 };
 INSTANTIATE_TEST_SUITE_P(SingleNumerParameter,
                          string_calculator_add_Parameter_Fixture,
-                         testing::Values([
-                                        {"1",1},
-                                        {"1,2",3}
-  ]));
+                         testing::Values(
+                                        std::make_tuple("1", 1),
+                                        std::make_tuple("1,2",3)
+  ));
 
 TEST(string_calculator_add_when_passed_a_single_number,returns_0_for_empty_string){
  //Arrange
